@@ -10,16 +10,8 @@ import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import {
   ArrowRight,
-  CheckCircle,
-  Users,
-  Award,
-  Zap,
   Star,
   Quote,
-  Printer,
-  Monitor,
-  Handshake,
-  Globe2,
   Target,
   Shield,
   Clock,
@@ -37,7 +29,7 @@ export default function HomePage() {
       key: "printing",
       title: t.services.printing.title,
       description: "Infographie, sérigraphie, graphic design",
-      icon: Printer,
+      image: "/imprimerie.png",
       href: "/services/imprimerie",
       color: "bg-primary",
       features: [
@@ -54,7 +46,7 @@ export default function HomePage() {
       key: "it",
       title: t.services.it.title,
       description: "Web, web design, QA, mobile, cloud",
-      icon: Monitor,
+      image: "/solutioninfotmatique.png",
       href: "/services/informatique",
       color: "bg-secondary",
       features: [
@@ -71,7 +63,7 @@ export default function HomePage() {
       key: "prestations",
       title: t.services.business.title,
       description: "Services personnalisés pour votre entreprise",
-      icon: Handshake,
+      image: "/prestavtionservice.png",
       href: "/services/prestations",
       color: "bg-accent",
       features: [
@@ -88,7 +80,7 @@ export default function HomePage() {
       key: "importExport",
       title: t.services.trade.title,
       description: "Commerce international et logistique",
-      icon: Globe2,
+      image: "/import&export.png",
       href: "/services/import-export",
       color: "bg-foreground",
       features: [
@@ -103,12 +95,6 @@ export default function HomePage() {
     },
   ]
 
-  const stats = [
-    { number: "500+", label: language === "fr" ? "Clients satisfaits" : "Satisfied clients", icon: Users },
-    { number: "10+", label: language === "fr" ? "Années d'expérience" : "Years of experience", icon: Award },
-    { number: "1000+", label: language === "fr" ? "Projets réalisés" : "Completed projects", icon: CheckCircle },
-    { number: "24/7", label: language === "fr" ? "Support client" : "Customer support", icon: Zap },
-  ]
 
   const testimonials = [
     {
@@ -213,52 +199,56 @@ export default function HomePage() {
       <section className="relative py-20 lg:py-32 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         <div className="container mx-auto px-4 relative">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-6 bg-primary/20 text-primary-foreground border-primary/30">
-              {language === "fr" ? "Votre Partenaire de Confiance" : "Your Trusted Partner"}
-            </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 text-balance">
-              {t.hero.title}
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 text-pretty max-w-3xl mx-auto">
-              {t.hero.subtitle}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-lg">
-                {t.hero.cta}
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                asChild
-                className="px-8 py-6 text-lg bg-transparent border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
-              >
-                <Link href="/contact">{t.hero.ctaSecondary}</Link>
-              </Button>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Content */}
+            <div className="text-center lg:text-left">
+              <Badge className="mb-6 bg-primary/20 text-primary-foreground border-primary/30">
+                {language === "fr" ? "Votre Partenaire de Confiance" : "Your Trusted Partner"}
+              </Badge>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 text-balance">
+                {t.hero.title}
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground mb-8 text-pretty">
+                {t.hero.subtitle}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-lg">
+                  {t.hero.cta}
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  asChild
+                  className="px-8 py-6 text-lg bg-transparent border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
+                >
+                  <Link href="/contact">{t.hero.ctaSecondary}</Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Image */}
+            <div className="relative">
+              <div className="relative w-full h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/HomeEmak.png"
+                  alt={language === "fr" ? "E. E TECH - Services Intégrés" : "E. E TECH - Integrated Services"}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+              </div>
+              
+              {/* Floating elements */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-xl animate-pulse" />
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-secondary/20 rounded-full blur-xl animate-pulse delay-1000" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className="flex justify-center mb-4">
-                  <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/30 transition-colors">
-                    <stat.icon className="w-8 h-8 text-primary" />
-                  </div>
-                </div>
-                <div className="text-4xl font-bold text-foreground mb-2">{stat.number}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Services Section */}
       <section className="py-20">
@@ -272,47 +262,30 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
-              <Card
+              <Link
                 key={service.key}
-                className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary/20 overflow-hidden"
+                href={service.href}
+                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-background to-muted/50 border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-3 cursor-pointer block"
               >
-                <CardHeader className="pb-4">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div
-                      className={`w-12 h-12 ${service.color} rounded-lg flex items-center justify-center ${
-                        service.key === "importExport" ? "text-white" : "text-foreground"
-                      }`}
-                    >
-                      <service.icon className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <CardTitle className="text-xl mb-1">{service.title}</CardTitle>
-                      <Badge variant="secondary" className="text-xs bg-secondary/20 text-secondary-foreground">
-                        {service.projects}
-                      </Badge>
-                    </div>
-                  </div>
-                  <CardDescription className="text-base">{service.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-2 gap-2 mb-6">
-                    {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-sm">
-                        <CheckCircle className="w-4 h-4 text-secondary mr-2 flex-shrink-0" />
-                        <span className="text-muted-foreground">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                    <Link href={service.href}>
-                      {language === "fr" ? "Découvrir ce service" : "Discover this service"}
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
+                {/* Image Container */}
+                <div className="relative h-64 overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
+                  />
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                </div>
+
+
+                {/* Hover Effect Border */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-primary/0 group-hover:border-primary/30 transition-all duration-500 pointer-events-none" />
+              </Link>
             ))}
           </div>
         </div>

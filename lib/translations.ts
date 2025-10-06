@@ -69,7 +69,7 @@ export const translations = {
     },
     about: {
       title: "À propos de E. E TECH",
-      subtitle: "Excellence, Innovation et Service Client depuis 2014",
+      subtitle: "Excellence, Innovation et Service Client depuis 2025",
       mission: "Notre Mission",
       missionText:
         "Accompagner nos clients dans leur développement en offrant des solutions complètes et innovantes dans l'imprimerie, l'informatique et le commerce international. Nous nous engageons à dépasser les attentes et à créer de la valeur durable.",
@@ -166,7 +166,7 @@ export const translations = {
     },
     about: {
       title: "About E. E TECH",
-      subtitle: "Excellence, Innovation and Customer Service since 2014",
+      subtitle: "Excellence, Innovation and Customer Service since 2025",
       mission: "Our Mission",
       missionText:
         "Support our clients in their development by offering complete and innovative solutions in printing, IT and international trade. We are committed to exceeding expectations and creating lasting value.",

@@ -54,56 +54,6 @@ export default function AboutPage() {
     },
   ]
 
-  const milestones = [
-    {
-      year: "2014",
-      title: language === "fr" ? "Création de E. E TECH" : "E. E TECH Founded",
-      description:
-        language === "fr"
-          ? "Lancement de l'entreprise avec une vision claire : offrir des services intégrés de qualité."
-          : "Company launch with a clear vision: providing quality integrated services.",
-    },
-    {
-      year: "2016",
-      title: language === "fr" ? "Expansion des Services" : "Service Expansion",
-      description:
-        language === "fr"
-          ? "Ajout des solutions informatiques et développement de notre expertise technique."
-          : "Addition of IT solutions and development of our technical expertise.",
-    },
-    {
-      year: "2018",
-      title: language === "fr" ? "Certification Qualité" : "Quality Certification",
-      description:
-        language === "fr"
-          ? "Obtention de certifications internationales pour nos processus qualité."
-          : "Obtaining international certifications for our quality processes.",
-    },
-    {
-      year: "2020",
-      title: language === "fr" ? "Digitalisation" : "Digitalization",
-      description:
-        language === "fr"
-          ? "Transformation digitale complète et lancement de services cloud."
-          : "Complete digital transformation and launch of cloud services.",
-    },
-    {
-      year: "2022",
-      title: language === "fr" ? "Expansion Régionale" : "Regional Expansion",
-      description:
-        language === "fr"
-          ? "Extension de nos activités dans toute la région Afrique Centrale."
-          : "Extension of our activities throughout the Central Africa region.",
-    },
-    {
-      year: "2024",
-      title: language === "fr" ? "Innovation Continue" : "Continuous Innovation",
-      description:
-        language === "fr"
-          ? "Lancement de nouvelles solutions IA et services personnalisés."
-          : "Launch of new AI solutions and personalized services.",
-    },
-  ]
 
   const values = [
     {
@@ -182,6 +132,60 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Company Story */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                {language === "fr" ? "Notre Histoire" : "Our Story"}
+              </h2>
+              <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            
+            <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed">
+              {language === "fr" ? (
+                <div className="space-y-6">
+                  <p>
+                    Au cœur du Cameroun, dans une ville en pleine effervescence économique, naît une idée simple mais ambitieuse : transformer un déficit en opportunité. Chaque jour, des entreprises, des institutions publiques, des universités et même de jeunes créateurs perdaient du temps et de l'argent en recherchant des solutions d'impression modernes ou des services numériques fiables. Les besoins étaient immenses, mais les infrastructures locales, souvent vétustes, ne répondaient plus aux standards internationaux.
+                  </p>
+                  
+                  <p>
+                    C'est ainsi qu'est née l'initiative <strong className="text-foreground">E. E TECH</strong>. L'histoire commence par une imprimerie industrielle moderne, équipée de technologies de pointe capables de produire en grande quantité, mais aussi avec une finesse qui valorise les marques locales et régionales. Cette imprimerie devient rapidement un catalyseur de compétitivité : packaging pour l'agroalimentaire, supports marketing, manuels pédagogiques, affiches institutionnelles, tout est produit localement, réduisant la dépendance aux importations.
+                  </p>
+                  
+                  <p>
+                    Mais l'histoire ne s'arrête pas là. Consciente que l'avenir appartient au numérique, l'équipe a élargi sa vision : déployer des solutions informatiques intégrées. Gestion documentaire dématérialisée, plateformes de commande en ligne, cloud printing, applications mobiles pour suivre ses commandes en temps réel… autant d'outils qui permettent aux clients d'allier efficacité, gain de temps et sécurité des données.
+                  </p>
+                  
+                  <p className="text-foreground font-medium">
+                    Ainsi, l'entreprise n'est pas seulement une imprimerie ; elle devient un hub technologique, un pont entre le papier et le digital, entre la tradition et l'innovation. Son objectif est clair : offrir aux acteurs économiques africains des solutions qui allient performance, durabilité et transformation numérique, tout en créant des emplois qualifiés et en stimulant l'écosystème entrepreneurial local.
+                  </p>
+                </div>
+              ) : (
+                <div className="space-y-6">
+                  <p>
+                    At the heart of Cameroon, in a city experiencing economic effervescence, a simple but ambitious idea was born: transforming a deficit into an opportunity. Every day, companies, public institutions, universities, and even young creators were losing time and money searching for modern printing solutions or reliable digital services. The needs were immense, but local infrastructure, often outdated, no longer met international standards.
+                  </p>
+                  
+                  <p>
+                    This is how the <strong className="text-foreground">E. E TECH</strong> initiative was born. The story begins with a modern industrial printing facility, equipped with cutting-edge technologies capable of producing in large quantities, but also with a finesse that enhances local and regional brands. This printing facility quickly became a catalyst for competitiveness: packaging for agri-food, marketing materials, educational manuals, institutional posters, everything is produced locally, reducing dependence on imports.
+                  </p>
+                  
+                  <p>
+                    But the story doesn't end there. Aware that the future belongs to digital, the team expanded its vision: deploying integrated IT solutions. Digital document management, online ordering platforms, cloud printing, mobile applications to track orders in real-time... tools that allow clients to combine efficiency, time savings, and data security.
+                  </p>
+                  
+                  <p className="text-foreground font-medium">
+                    Thus, the company is not just a printing facility; it becomes a technological hub, a bridge between paper and digital, between tradition and innovation. Its objective is clear: to offer African economic actors solutions that combine performance, sustainability, and digital transformation, while creating skilled jobs and stimulating the local entrepreneurial ecosystem.
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Mission, Vision, Values */}
       <section className="py-20">
         <div className="container mx-auto px-4">
@@ -255,43 +259,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              {language === "fr" ? "Notre Parcours" : "Our Journey"}
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              {language === "fr"
-                ? "Une décennie d'innovation et de croissance continue"
-                : "A decade of innovation and continuous growth"}
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-8">
-              {milestones.map((milestone, index) => (
-                <div key={index} className="flex gap-6 group">
-                  <div className="flex flex-col items-center">
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform">
-                      {milestone.year.slice(-2)}
-                    </div>
-                    {index < milestones.length - 1 && <div className="w-0.5 h-16 bg-border mt-4"></div>}
-                  </div>
-                  <div className="flex-1 pb-8">
-                    <div className="flex items-center gap-3 mb-2">
-                      <Badge variant="outline">{milestone.year}</Badge>
-                      <h3 className="text-xl font-semibold text-foreground">{milestone.title}</h3>
-                    </div>
-                    <p className="text-muted-foreground">{milestone.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Team Section */}
       <section className="py-20 bg-muted/30">
